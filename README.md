@@ -21,7 +21,7 @@ This project implements a `Triangle` class in Python to demonstrate core object-
 - Static method `object_count()` to return number of Triangle objects created
 - Instance methods:
   - `perimeter()` – returns the sum of all three sides
-  - `is_right_angled()` – checks if the triangle is right-angled
+  - `isRightAngled()` – checks if the triangle is right-angled
   - `__str__()` – returns a human-readable string representation
 - Encapsulation of side values using `@property` and setters with validation
 
