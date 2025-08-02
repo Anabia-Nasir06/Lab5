@@ -1,4 +1,4 @@
-# 🧮 Triangle Scenario – Week 05 Lab 05 (Python)
+# 🔺Triangle Scenario – Week 05 Lab 05 (Python)
 
 This project implements a `Triangle` class in Python to demonstrate core object-oriented programming (OOP) concepts including:
 
