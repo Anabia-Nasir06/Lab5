@@ -2,15 +2,37 @@ import math
 class Triangle:
     __object_count = 0
 
-    def __init__(self, sideA=1.0, sideB=1.0, sideC=1.0, clone_from=None):
-        if clone_from is not None:
-            self._sideA = clone_from.sideA
-            self._sideB = clone_from._sideB
-            self._sideC = clone_from._sideC
-        else:
+    def __init__(self, sideA=None, sideB=None, sideC=None):
+        if sideA is None and sideB is None and sideC is None:   # Similar to Default Construtor
+            self._sideA = 1.0
+            self._sideB = 1.0
+            self._sideC = 1.0
+
+        elif sideA is not None and sideB is None and sideC is None:
+            if isinstance(sideA, Triangle):                     # Clone constructor
+                self._sideA = sideA._sideA
+                self._sideB = sideA._sideB
+                self._sideC = sideA._sideC
+            else:                                                # One-parameter constructor (equilateral)
+                self._sideA = sideA
+                self._sideB = sideA
+                self._sideC = sideA
+
+        elif sideA is not None and sideB is not None and sideC is None:   # Two-parameter constructor (isosceles x, x, y)
+            self._sideA = sideA
+            self._sideB = sideA
+            self._sideC = sideB
+
+        elif sideA is not None and sideB is not None and sideC is not None:    # Three-parameter constructor
             self._sideA = sideA
             self._sideB = sideB
             self._sideC = sideC
+
+        else:
+            print("Invalid input")
+            self._sideA = 0.0
+            self._sideB = 0.0
+            self._sideC = 0.0
 
         Triangle.__object_count += 1
 
